@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: image
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/image_processing
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-image.yaml
+  multipart:
+    max-file-size: 10MB
+    max-request-size: 10MB
+server:
+  tomcat:
+    max-http-header-size: 6553678
